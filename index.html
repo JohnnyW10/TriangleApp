@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link href="https://cdn.rawgit.com/mochajs/mocha/2.2.5/mocha.css" rel="stylesheet"/>
+  <style>
+    body { 
+      background-color:rgb(89, 120, 145);
+      margin-top: 50px;
+      text-align: center;
+    }
+    #box {
+      margin-left: auto;
+      margin-right: auto;
+      width: 50vw;
+      border: 2px solid black;
+      border-radius: 5%;
+      text-align: center;
+      padding-bottom: 100px;
+    }
+
+    button {
+      width: 30%;
+      height: 5vh;
+      border-radius: 15px;
+      background-color: cadetblue;
+      cursor: pointer;
+    }
+    
+  </style>
+</head>
+<body>
+  <div id="box">
+    <h3>Enter the dimensions of the triangle</h3>
+    <p>A</p><input type="number" id="FirstN">
+    <p>B</p><input type="number" id="SecondN">
+    <p>C</p><input type="number" id="ThirdN">
+    <p>Click the button to check possibility of creating triangle and see what kind of triangle we created !!!</p><button id="but">Check</button>
+  </div>
+  <div>
+    <h1 id="result"></h1>
+  </div>
+  <div id="mocha"></div>
+  <script src="https://cdn.rawgit.com/Automattic/expect.js/0.3.1/index.js"></script>
+  <script src="https://cdn.rawgit.com/chaijs/chai/3.5.0/chai.js"></script>
+  <script src="https://cdn.rawgit.com/mochajs/mocha/2.2.5/mocha.js"></script>
+
+  
+
+  <script src="check_triangle.js"></script>
+
+  <script>
+    const mocha = window.mocha;
+    mocha.setup('bdd');
+  </script>
+
+  <script src="check_triangle_test.js"></script>
+
+  <script>
+    mocha.checkLeaks();
+    mocha.run();
+  </script>
+</body>
+</html>
