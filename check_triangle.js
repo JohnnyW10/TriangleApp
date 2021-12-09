@@ -1,10 +1,10 @@
 //In this function we check that we can create triangle from values of the inputs in HTML and after that we check what kind of triangle is that
 
+
 function check_traingle() {
   let A = document.getElementById('FirstN').value;
   let B = document.getElementById('SecondN').value;
   let C = document.getElementById('ThirdN').value;
-
   let display_result = document.getElementById('result');
 
   //This variables is to do Pythagorean theorem which is needed to check rectangularity
@@ -12,16 +12,14 @@ function check_traingle() {
   let k_B = B*B;
   let k_C = C*C;
 
-  //Variable to return string
   let result = '';
 
   let array = [A,B,C];
   array.sort(function(a, b){return a-b});
   
-//checking value if it is null program will stoped and after this we verify if two shorter sides can create triangle with longer third side if they are equal with longer or their sum is bigger
   if((A!=0 && B!=0 && C!=0) && (parseInt(array[0]) + parseInt(array[1]) >= array[2])) {
     if (A===B && B===C && A===C) {
-      result += "This is an equilateral triangle. ";
+      result += "This is equilateral triangle. ";
     } else if(A===B || B===C || A===C) {
       result += "It is an isosceles triangle. ";
     }
@@ -29,11 +27,10 @@ function check_traingle() {
       result += "It is a rectangular triangle. ";
     }
     if (A!=B && C!=A && C!=B ) {
-      result += "This is an equilateral triangle. ";
+      result += "This is an scalane triangle. ";
     } 
-    
   } else {
-    result += "The data is wrong!!! Change value. ";
+    result = "Wrong value!"
   }
 
   console.log(result);
@@ -41,7 +38,7 @@ function check_traingle() {
   return result;
 }
 
-//This variable is our button and after clicked we call our function
-let button = document.getElementById('but');
+let button = document.getElementById('button');
 button.addEventListener("click", check_traingle);
+
 
